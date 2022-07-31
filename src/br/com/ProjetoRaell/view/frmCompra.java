@@ -4,7 +4,6 @@
  */
 package br.com.ProjetoRaell.view;
 
-import br.com.ProjetoRaell.dao.ClienteDao;
 import br.com.ProjetoRaell.dao.CompraDao;
 import br.com.ProjetoRaell.model.Compra;
 
@@ -31,13 +30,16 @@ public class frmCompra extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
-        txtQuantity = new javax.swing.JTextField();
+        txtQuantityy = new javax.swing.JTextField();
         btSalvarr = new javax.swing.JButton();
         cbShape = new javax.swing.JComboBox<>();
         cbFlavor = new javax.swing.JComboBox<>();
-        jLabel1 = new javax.swing.JLabel();
+        btExcluir = new javax.swing.JButton();
+        btEditar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1406, 735));
         getContentPane().setLayout(null);
 
         jButton1.setBackground(new java.awt.Color(255, 137, 196));
@@ -45,14 +47,14 @@ public class frmCompra extends javax.swing.JFrame {
         jButton1.setText("+");
         jButton1.setBorder(null);
         getContentPane().add(jButton1);
-        jButton1.setBounds(140, 290, 50, 50);
+        jButton1.setBounds(137, 290, 50, 50);
 
-        txtQuantity.setBackground(new java.awt.Color(255, 137, 196));
-        txtQuantity.setBorder(null);
-        getContentPane().add(txtQuantity);
-        txtQuantity.setBounds(1055, 267, 190, 80);
+        txtQuantityy.setBackground(new java.awt.Color(255, 137, 196));
+        txtQuantityy.setBorder(null);
+        getContentPane().add(txtQuantityy);
+        txtQuantityy.setBounds(1047, 270, 190, 80);
 
-        btSalvarr.setBackground(new java.awt.Color(255, 102, 255));
+        btSalvarr.setBackground(new java.awt.Color(255, 137, 196));
         btSalvarr.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btSalvarr.setForeground(new java.awt.Color(255, 255, 255));
         btSalvarr.setText("Save");
@@ -63,7 +65,7 @@ public class frmCompra extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btSalvarr);
-        btSalvarr.setBounds(1190, 592, 140, 80);
+        btSalvarr.setBounds(775, 600, 140, 90);
 
         cbShape.setBackground(new java.awt.Color(255, 0, 153));
         cbShape.setForeground(new java.awt.Color(255, 255, 255));
@@ -75,12 +77,12 @@ public class frmCompra extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cbShape);
-        cbShape.setBounds(625, 266, 410, 80);
+        cbShape.setBounds(620, 270, 410, 80);
 
         cbFlavor.setBackground(new java.awt.Color(255, 0, 153));
         cbFlavor.setForeground(new java.awt.Color(255, 255, 255));
         cbFlavor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cbFlavor.setBorder(null);
+        cbFlavor.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         cbFlavor.setVerifyInputWhenFocusTarget(false);
         cbFlavor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,13 +90,38 @@ public class frmCompra extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cbFlavor);
-        cbFlavor.setBounds(200, 267, 410, 80);
+        cbFlavor.setBounds(198, 270, 410, 80);
 
-        jLabel1.setBackground(new java.awt.Color(255, 153, 204));
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\silva\\OneDrive\\Documentos\\NetBeansProjects\\ProjetoRaell\\src\\br\\com\\ProjetoRaell\\imagens\\compra.jpeg")); // NOI18N
-        jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(-8, 0, 1490, 700);
+        btExcluir.setBackground(new java.awt.Color(255, 137, 196));
+        btExcluir.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btExcluir.setForeground(new java.awt.Color(255, 255, 255));
+        btExcluir.setText("Excluir");
+        btExcluir.setBorder(null);
+        btExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btExcluirActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btExcluir);
+        btExcluir.setBounds(458, 600, 140, 90);
+
+        btEditar.setBackground(new java.awt.Color(255, 137, 196));
+        btEditar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btEditar.setForeground(new java.awt.Color(255, 255, 255));
+        btEditar.setText("Editar");
+        btEditar.setBorder(null);
+        btEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btEditarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btEditar);
+        btEditar.setBounds(617, 600, 140, 90);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\silva\\OneDrive\\Documentos\\NetBeansProjects\\ProjetoRaell\\src\\br\\com\\ProjetoRaell\\imagens\\compra .jpeg")); // NOI18N
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(-13, -10, 1400, 720);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -109,16 +136,46 @@ public class frmCompra extends javax.swing.JFrame {
 
     private void btSalvarrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarrActionPerformed
         // TODO add your handling code here:
+        
+        
          Compra comp = new Compra();
          
          comp.setFlavor(cbFlavor.getSelectedItem().toString());
          comp.setShape(cbShape.getSelectedItem().toString());
-         comp.setQuantity(Integer.parseInt(txtQuantity.getText()));
+         comp.setQuantity(Integer.parseInt(txtQuantityy.getText()));
        
         
         CompraDao dao = new CompraDao();
         dao.salvarCompra(comp);
     }//GEN-LAST:event_btSalvarrActionPerformed
+
+    private void btEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEditarActionPerformed
+        // TODO add your handling code here:
+        Compra comp = new Compra();
+         
+         comp.setFlavor(cbFlavor.getSelectedItem().toString());
+         comp.setShape(cbShape.getSelectedItem().toString());
+         comp.setQuantity(Integer.parseInt(txtQuantityy.getText()));
+       
+        
+        CompraDao dao = new CompraDao();
+        dao.editarCompra(comp);
+        
+        
+    }//GEN-LAST:event_btEditarActionPerformed
+
+    private void btExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirActionPerformed
+        // TODO add your handling code here:
+        Compra comp = new Compra();
+         
+         comp.setFlavor(cbFlavor.getSelectedItem().toString());
+         
+       
+        
+        CompraDao dao = new CompraDao();
+        dao.excluirCompra(comp);
+        
+    }//GEN-LAST:event_btExcluirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -156,13 +213,13 @@ public class frmCompra extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btSalvar;
-    private javax.swing.JButton btSalvar1;
+    private javax.swing.JButton btEditar;
+    private javax.swing.JButton btExcluir;
     private javax.swing.JButton btSalvarr;
-    private javax.swing.JComboBox<String> cbFlavor;
-    private javax.swing.JComboBox<String> cbShape;
+    public javax.swing.JComboBox<String> cbFlavor;
+    public javax.swing.JComboBox<String> cbShape;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField txtQuantity;
+    private javax.swing.JLabel jLabel2;
+    public javax.swing.JTextField txtQuantityy;
     // End of variables declaration//GEN-END:variables
 }

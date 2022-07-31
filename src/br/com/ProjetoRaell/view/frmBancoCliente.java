@@ -4,6 +4,11 @@
  */
 package br.com.ProjetoRaell.view;
 
+import br.com.ProjetoRaell.dao.ClienteDao;
+import br.com.ProjetoRaell.model.Cliente;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author silva 
@@ -15,6 +20,27 @@ public class frmBancoCliente extends javax.swing.JFrame {
      */
     public frmBancoCliente() {
         initComponents();
+    }
+    
+    public void listar(){
+        ClienteDao dao = new ClienteDao();
+        List<Cliente> clientes = dao.listarClientes();
+        DefaultTableModel dados = (DefaultTableModel)tbClientes.getModel();
+        dados.setNumRows(0);
+        
+        for (Cliente cliente : clientes) {
+            dados.addRow(new Object[]{
+                cliente.getId(),
+                cliente.getNome(),
+                cliente.getTelefone(),
+                cliente.getCep(),
+                cliente.getCidade(),
+                cliente.getEstado(),
+                cliente.getRua(),
+                cliente.getQuantity()
+                
+            });
+        }
     }
 
     /**
@@ -28,20 +54,24 @@ public class frmBancoCliente extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        tbClientes = new javax.swing.JTable();
+        btHome = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1406, 735));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
         getContentPane().setLayout(null);
 
-        jTable1.setBackground(new java.awt.Color(255, 137, 196));
-        jTable1.setForeground(new java.awt.Color(255, 255, 255));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tbClientes.setBackground(new java.awt.Color(255, 137, 196));
+        tbClientes.setForeground(new java.awt.Color(255, 255, 255));
+        tbClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
@@ -52,50 +82,64 @@ public class frmBancoCliente extends javax.swing.JFrame {
                 "Id", "Nome", "Telefone", "CEP", "Cidade", "Estado", "Rua/Avenida", "Quantity"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
-
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(312, 50, 830, 402);
-
-        jButton1.setBackground(new java.awt.Color(255, 137, 196));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Atualizar");
-        jButton1.setBorder(null);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        tbClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbClientesMouseClicked(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(644, 570, 140, 80);
+        jScrollPane1.setViewportView(tbClientes);
 
-        jButton2.setBackground(new java.awt.Color(255, 137, 196));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Apagar");
-        jButton2.setBorder(null);
-        getContentPane().add(jButton2);
-        jButton2.setBounds(798, 569, 140, 80);
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(280, 70, 840, 510);
 
-        jButton4.setBackground(new java.awt.Color(255, 137, 196));
-        jButton4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Home");
-        jButton4.setBorder(null);
-        getContentPane().add(jButton4);
-        jButton4.setBounds(490, 570, 140, 80);
+        btHome.setBackground(new java.awt.Color(255, 137, 196));
+        btHome.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btHome.setForeground(new java.awt.Color(255, 255, 255));
+        btHome.setText("Home");
+        btHome.setBorder(null);
+        btHome.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btHomeMouseClicked(evt);
+            }
+        });
+        getContentPane().add(btHome);
+        btHome.setBounds(650, 600, 140, 90);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\silva\\OneDrive\\Documentos\\NetBeansProjects\\ProjetoRaell\\src\\br\\com\\ProjetoRaell\\imagens\\bancocliente.jpeg")); // NOI18N
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(-6, 0, 1400, 700);
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\silva\\OneDrive\\Documentos\\NetBeansProjects\\ProjetoRaell\\src\\br\\com\\ProjetoRaell\\imagens\\banco.jpeg")); // NOI18N
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(0, 0, 1400, 700);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        listar();
+        
+    }//GEN-LAST:event_formWindowActivated
+
+    private void btHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btHomeMouseClicked
+        // TODO add your handling code here:
+        frmHome home = new frmHome();
+        home.setVisible(true);
+    }//GEN-LAST:event_btHomeMouseClicked
+
+    private void tbClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbClientesMouseClicked
+        // TODO add your handling code here:
+        frmCliente cli = new frmCliente();
+        cli.setVisible(true);
+        
+        cli.txtId.setText(tbClientes.getValueAt(tbClientes.getSelectedRow(), 0).toString());
+        cli.txtNome.setText(tbClientes.getValueAt(tbClientes.getSelectedRow(), 1).toString());
+        cli.txtTelefone.setText(tbClientes.getValueAt(tbClientes.getSelectedRow(), 2).toString());
+        cli.txtCep.setText(tbClientes.getValueAt(tbClientes.getSelectedRow(), 3).toString());
+        cli.txtCidade.setText(tbClientes.getValueAt(tbClientes.getSelectedRow(), 4).toString());
+        cli.txtEstado.setText(tbClientes.getValueAt(tbClientes.getSelectedRow(), 5).toString());
+        cli.txtRua.setText(tbClientes.getValueAt(tbClientes.getSelectedRow(), 6).toString());
+        cli.txtQuan.setText(tbClientes.getValueAt(tbClientes.getSelectedRow(), 7).toString());
+                
+    }//GEN-LAST:event_tbClientesMouseClicked
 
     /**
      * @param args the command line arguments
@@ -133,12 +177,10 @@ public class frmBancoCliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btHome;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tbClientes;
     // End of variables declaration//GEN-END:variables
 }

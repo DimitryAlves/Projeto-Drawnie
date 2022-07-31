@@ -4,7 +4,12 @@
  */
 package br.com.ProjetoRaell.view;
 
-/**
+import br.com.ProjetoRaell.dao.CompraDao;
+import br.com.ProjetoRaell.model.Compra;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
+/** 
  *
  * @author silva
  */
@@ -16,6 +21,24 @@ public class frmBancoCompra extends javax.swing.JFrame {
     public frmBancoCompra() {
         initComponents();
     }
+    
+    public void listar(){
+        CompraDao dao = new CompraDao();
+        List<Compra> compras = dao.listarCompras();
+        DefaultTableModel dados = (DefaultTableModel)tbCompras.getModel();
+        dados.setNumRows(0);
+        
+        for (Compra compra : compras) {
+            dados.addRow(new Object[]{
+                compra.getFlavor(),
+                compra.getShape(),
+                compra.getQuantity()
+                
+                
+            });
+        }
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,19 +50,22 @@ public class frmBancoCompra extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tbCompras = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1406, 735));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
         getContentPane().setLayout(null);
 
-        jTable2.setBackground(new java.awt.Color(255, 137, 196));
-        jTable2.setForeground(new java.awt.Color(255, 255, 255));
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tbCompras.setBackground(new java.awt.Color(255, 137, 196));
+        tbCompras.setForeground(new java.awt.Color(255, 255, 255));
+        tbCompras.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -50,11 +76,16 @@ public class frmBancoCompra extends javax.swing.JFrame {
                 "Flavor", "Shape", "Quantity"
             }
         ));
-        jTable2.setSelectionBackground(new java.awt.Color(255, 102, 204));
-        jScrollPane2.setViewportView(jTable2);
+        tbCompras.setSelectionBackground(new java.awt.Color(255, 102, 204));
+        tbCompras.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbComprasMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(tbCompras);
 
         getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(260, 80, 910, 402);
+        jScrollPane2.setBounds(230, 70, 910, 402);
 
         jButton1.setBackground(new java.awt.Color(255, 137, 196));
         jButton1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -62,39 +93,31 @@ public class frmBancoCompra extends javax.swing.JFrame {
         jButton1.setText("Home");
         jButton1.setBorder(null);
         getContentPane().add(jButton1);
-        jButton1.setBounds(424, 572, 120, 80);
+        jButton1.setBounds(650, 600, 140, 80);
 
-        jButton2.setBackground(new java.awt.Color(255, 137, 196));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("+ Novo");
-        jButton2.setBorder(null);
-        getContentPane().add(jButton2);
-        jButton2.setBounds(555, 572, 120, 80);
-
-        jButton3.setBackground(new java.awt.Color(255, 137, 196));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Atualizar");
-        jButton3.setToolTipText("");
-        jButton3.setBorder(null);
-        getContentPane().add(jButton3);
-        jButton3.setBounds(686, 572, 120, 80);
-
-        jButton4.setBackground(new java.awt.Color(255, 137, 196));
-        jButton4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Apagar");
-        jButton4.setBorder(null);
-        getContentPane().add(jButton4);
-        jButton4.setBounds(815, 572, 120, 80);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\silva\\OneDrive\\Documentos\\NetBeansProjects\\ProjetoRaell\\src\\br\\com\\ProjetoRaell\\imagens\\bancocompra.jpeg")); // NOI18N
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(-40, 10, 1870, 700);
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\silva\\OneDrive\\Documentos\\NetBeansProjects\\ProjetoRaell\\src\\br\\com\\ProjetoRaell\\imagens\\banco.jpeg")); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, -30, 1840, 760);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        // TODO add your handling code here:
+        listar();
+    }//GEN-LAST:event_formWindowActivated
+
+    private void tbComprasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbComprasMouseClicked
+        // TODO add your handling code here:
+        frmCompra comp = new frmCompra();
+        comp.setVisible(true);
+        
+        comp.cbFlavor.setSelectedItem(tbCompras.getValueAt(tbCompras.getSelectedRow(), 0).toString());
+        comp.cbShape.setSelectedItem(tbCompras.getValueAt(tbCompras.getSelectedRow(), 1).toString());
+        comp.txtQuantityy.setText(tbCompras.getValueAt(tbCompras.getSelectedRow(), 2).toString());
+                
+     
+    }//GEN-LAST:event_tbComprasMouseClicked
 
     /**
      * @param args the command line arguments
@@ -133,11 +156,8 @@ public class frmBancoCompra extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable2;
+    private javax.swing.JTable tbCompras;
     // End of variables declaration//GEN-END:variables
 }

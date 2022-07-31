@@ -18,6 +18,10 @@ public class frmCliente extends javax.swing.JFrame {
      */
     public frmCliente() {
         initComponents();
+        
+     
+        
+       
     }
 
     /**
@@ -29,45 +33,54 @@ public class frmCliente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
+        txtId = new javax.swing.JTextField();
         txtNome = new javax.swing.JTextField();
         txtCidade = new javax.swing.JTextField();
         txtEstado = new javax.swing.JTextField();
         txtRua = new javax.swing.JTextField();
         txtQuan = new javax.swing.JTextField();
-        btSalvar = new javax.swing.JButton();
         txtCep = new javax.swing.JFormattedTextField();
+        btSalvar = new javax.swing.JButton();
         txtTelefone = new javax.swing.JFormattedTextField();
-        jLabel1 = new javax.swing.JLabel();
+        btExcluir = new javax.swing.JButton();
+        btEditar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1406, 735));
         getContentPane().setLayout(null);
 
-        jTextField1.setBackground(new java.awt.Color(255, 137, 196));
-        jTextField1.setBorder(null);
-        jTextField1.setSelectionColor(new java.awt.Color(153, 255, 0));
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(180, 194, 88, 80);
+        txtId.setEditable(false);
+        txtId.setBackground(new java.awt.Color(255, 137, 196));
+        txtId.setBorder(null);
+        txtId.setSelectionColor(new java.awt.Color(153, 255, 0));
+        txtId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIdActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtId);
+        txtId.setBounds(185, 200, 88, 80);
 
         txtNome.setBackground(new java.awt.Color(255, 137, 196));
         txtNome.setBorder(null);
         getContentPane().add(txtNome);
-        txtNome.setBounds(287, 194, 570, 80);
+        txtNome.setBounds(296, 200, 570, 80);
 
         txtCidade.setBackground(new java.awt.Color(255, 137, 196));
         txtCidade.setBorder(null);
         getContentPane().add(txtCidade);
-        txtCidade.setBounds(527, 328, 330, 80);
+        txtCidade.setBounds(533, 333, 330, 80);
 
         txtEstado.setBackground(new java.awt.Color(255, 137, 196));
         txtEstado.setBorder(null);
         getContentPane().add(txtEstado);
-        txtEstado.setBounds(882, 328, 330, 80);
+        txtEstado.setBounds(890, 333, 330, 80);
 
         txtRua.setBackground(new java.awt.Color(255, 137, 196));
         txtRua.setBorder(null);
         getContentPane().add(txtRua);
-        txtRua.setBounds(176, 463, 830, 80);
+        txtRua.setBounds(183, 470, 830, 80);
 
         txtQuan.setBackground(new java.awt.Color(255, 137, 196));
         txtQuan.setBorder(null);
@@ -77,7 +90,22 @@ public class frmCliente extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtQuan);
-        txtQuan.setBounds(1025, 463, 190, 80);
+        txtQuan.setBounds(1031, 470, 190, 80);
+
+        txtCep.setBackground(new java.awt.Color(255, 137, 196));
+        txtCep.setBorder(null);
+        try {
+            txtCep.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-###")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        txtCep.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCepActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtCep);
+        txtCep.setBounds(183, 333, 330, 80);
 
         btSalvar.setBackground(new java.awt.Color(255, 137, 196));
         btSalvar.setFont(new java.awt.Font("Segoe UI Emoji", 0, 24)); // NOI18N
@@ -90,17 +118,7 @@ public class frmCliente extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btSalvar);
-        btSalvar.setBounds(1210, 600, 110, 60);
-
-        txtCep.setBackground(new java.awt.Color(255, 137, 196));
-        txtCep.setBorder(null);
-        try {
-            txtCep.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-###")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        getContentPane().add(txtCep);
-        txtCep.setBounds(177, 329, 330, 80);
+        btSalvar.setBounds(793, 600, 140, 90);
 
         txtTelefone.setBackground(new java.awt.Color(255, 137, 196));
         txtTelefone.setBorder(null);
@@ -110,12 +128,43 @@ public class frmCliente extends javax.swing.JFrame {
             ex.printStackTrace();
         }
         getContentPane().add(txtTelefone);
-        txtTelefone.setBounds(882, 194, 333, 80);
+        txtTelefone.setBounds(890, 200, 333, 80);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\silva\\OneDrive\\Documentos\\NetBeansProjects\\ProjetoRaell\\src\\br\\com\\ProjetoRaell\\imagens\\cliente.jpeg")); // NOI18N
-        jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(-7, 0, 1480, 700);
+        btExcluir.setBackground(new java.awt.Color(255, 137, 196));
+        btExcluir.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btExcluir.setForeground(new java.awt.Color(255, 255, 255));
+        btExcluir.setText("Excluir");
+        btExcluir.setBorder(null);
+        btExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btExcluirActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btExcluir);
+        btExcluir.setBounds(477, 600, 140, 90);
+
+        btEditar.setBackground(new java.awt.Color(255, 137, 196));
+        btEditar.setFont(new java.awt.Font("Segoe UI Emoji", 0, 24)); // NOI18N
+        btEditar.setForeground(new java.awt.Color(255, 255, 255));
+        btEditar.setText("Editar");
+        btEditar.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        btEditar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btEditarMouseClicked(evt);
+            }
+        });
+        btEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btEditarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btEditar);
+        btEditar.setBounds(635, 600, 140, 90);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\silva\\OneDrive\\Documentos\\NetBeansProjects\\ProjetoRaell\\src\\br\\com\\ProjetoRaell\\imagens\\cliente .jpeg")); // NOI18N
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(0, -10, 1410, 730);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -124,10 +173,18 @@ public class frmCliente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtQuanActionPerformed
 
+    private void txtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdActionPerformed
+
+    private void txtCepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCepActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCepActionPerformed
+
     private void btSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarActionPerformed
         // TODO add your handling code here:
         Cliente cli = new Cliente();
-        
+
         cli.setNome(txtNome.getText());
         cli.setTelefone(txtTelefone.getText());
         cli.setCep(txtCep.getText());
@@ -135,12 +192,42 @@ public class frmCliente extends javax.swing.JFrame {
         cli.setEstado(txtEstado.getText());
         cli.setRua(txtRua.getText());
         cli.setQuantity(Integer.parseInt(txtQuan.getText()));
-        
+
         ClienteDao dao = new ClienteDao();
         dao.salvarCliente(cli);
-        
-        
+
     }//GEN-LAST:event_btSalvarActionPerformed
+
+    private void btEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEditarActionPerformed
+        // TODO add your handling code here:
+        Cliente cli = new Cliente();
+
+        cli.setNome(txtNome.getText());
+        cli.setTelefone(txtTelefone.getText());
+        cli.setCep(txtCep.getText());
+        cli.setCidade(txtCidade.getText());
+        cli.setEstado(txtEstado.getText());
+        cli.setRua(txtRua.getText());
+        cli.setQuantity(Integer.parseInt(txtQuan.getText()));
+        cli.setId(Integer.parseInt(txtId.getText()));
+
+        ClienteDao dao = new ClienteDao();
+        dao.editarCliente(cli);
+    }//GEN-LAST:event_btEditarActionPerformed
+
+    private void btEditarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btEditarMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btEditarMouseClicked
+
+    private void btExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirActionPerformed
+        // TODO add your handling code here:
+        Cliente cli = new Cliente();
+
+        cli.setId(Integer.parseInt(txtId.getText()));
+
+        ClienteDao dao = new ClienteDao();
+        dao.excluirCliente(cli);
+    }//GEN-LAST:event_btExcluirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -178,15 +265,17 @@ public class frmCliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btEditar;
+    private javax.swing.JButton btExcluir;
     private javax.swing.JButton btSalvar;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JFormattedTextField txtCep;
-    private javax.swing.JTextField txtCidade;
-    private javax.swing.JTextField txtEstado;
-    private javax.swing.JTextField txtNome;
-    private javax.swing.JTextField txtQuan;
-    private javax.swing.JTextField txtRua;
-    private javax.swing.JFormattedTextField txtTelefone;
+    private javax.swing.JLabel jLabel2;
+    public javax.swing.JFormattedTextField txtCep;
+    public javax.swing.JTextField txtCidade;
+    public javax.swing.JTextField txtEstado;
+    public javax.swing.JTextField txtId;
+    public javax.swing.JTextField txtNome;
+    public javax.swing.JTextField txtQuan;
+    public javax.swing.JTextField txtRua;
+    public javax.swing.JFormattedTextField txtTelefone;
     // End of variables declaration//GEN-END:variables
 }

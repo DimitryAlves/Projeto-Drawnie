@@ -33,6 +33,8 @@ public class frmLogin extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1406, 735));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         jTextField2.setBackground(new java.awt.Color(255, 153, 204));
