@@ -8,7 +8,7 @@ import br.com.ProjetoRaell.dao.ClienteDao;
 import br.com.ProjetoRaell.model.Cliente;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
-
+ 
 /**
  *
  * @author silva 
@@ -62,6 +62,7 @@ public class frmBancoCliente extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1406, 735));
+        setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
@@ -90,10 +91,10 @@ public class frmBancoCliente extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tbClientes);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(280, 70, 840, 510);
+        jScrollPane1.setBounds(210, 70, 960, 430);
 
         btHome.setBackground(new java.awt.Color(255, 137, 196));
-        btHome.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btHome.setFont(new java.awt.Font("Agency FB", 0, 30)); // NOI18N
         btHome.setForeground(new java.awt.Color(255, 255, 255));
         btHome.setText("Home");
         btHome.setBorder(null);

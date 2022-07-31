@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package br.com.ProjetoRaell.view;
-
+ 
 /**
  *
  * @author silva
@@ -38,6 +38,7 @@ public class frmLogin extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         jTextField2.setBackground(new java.awt.Color(255, 153, 204));
+        jTextField2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
@@ -47,12 +48,15 @@ public class frmLogin extends javax.swing.JFrame {
         jTextField2.setBounds(335, 273, 780, 80);
 
         jPasswordField1.setBackground(new java.awt.Color(255, 153, 204));
+        jPasswordField1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         getContentPane().add(jPasswordField1);
         jPasswordField1.setBounds(335, 415, 780, 80);
 
         jButton1.setBackground(new java.awt.Color(255, 153, 204));
+        jButton1.setFont(new java.awt.Font("Agency FB", 0, 30)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 0, 204));
         jButton1.setText("Go");
+        jButton1.setBorder(null);
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);

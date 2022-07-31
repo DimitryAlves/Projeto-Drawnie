@@ -29,7 +29,7 @@ public class frmCompra extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        btNovo = new javax.swing.JButton();
         txtQuantityy = new javax.swing.JTextField();
         btSalvarr = new javax.swing.JButton();
         cbShape = new javax.swing.JComboBox<>();
@@ -40,22 +40,30 @@ public class frmCompra extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1406, 735));
+        setResizable(false);
         getContentPane().setLayout(null);
 
-        jButton1.setBackground(new java.awt.Color(255, 137, 196));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("+");
-        jButton1.setBorder(null);
-        getContentPane().add(jButton1);
-        jButton1.setBounds(137, 290, 50, 50);
+        btNovo.setBackground(new java.awt.Color(255, 137, 196));
+        btNovo.setForeground(new java.awt.Color(255, 255, 255));
+        btNovo.setText("+");
+        btNovo.setBorder(null);
+        btNovo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btNovoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btNovo);
+        btNovo.setBounds(137, 290, 50, 50);
 
         txtQuantityy.setBackground(new java.awt.Color(255, 137, 196));
+        txtQuantityy.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtQuantityy.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtQuantityy.setBorder(null);
         getContentPane().add(txtQuantityy);
         txtQuantityy.setBounds(1047, 270, 190, 80);
 
         btSalvarr.setBackground(new java.awt.Color(255, 137, 196));
-        btSalvarr.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btSalvarr.setFont(new java.awt.Font("Agency FB", 0, 30)); // NOI18N
         btSalvarr.setForeground(new java.awt.Color(255, 255, 255));
         btSalvarr.setText("Save");
         btSalvarr.setBorder(null);
@@ -81,8 +89,8 @@ public class frmCompra extends javax.swing.JFrame {
 
         cbFlavor.setBackground(new java.awt.Color(255, 0, 153));
         cbFlavor.setForeground(new java.awt.Color(255, 255, 255));
-        cbFlavor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cbFlavor.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        cbFlavor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tradicional", "0% Lactose", "0% Glúten", "0% Açúcar", "Fitness", "Ninho", "Prestígio", "Oreo", "Recheio de Chocolate" }));
+        cbFlavor.setBorder(null);
         cbFlavor.setVerifyInputWhenFocusTarget(false);
         cbFlavor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,7 +101,7 @@ public class frmCompra extends javax.swing.JFrame {
         cbFlavor.setBounds(198, 270, 410, 80);
 
         btExcluir.setBackground(new java.awt.Color(255, 137, 196));
-        btExcluir.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btExcluir.setFont(new java.awt.Font("Agency FB", 0, 30)); // NOI18N
         btExcluir.setForeground(new java.awt.Color(255, 255, 255));
         btExcluir.setText("Excluir");
         btExcluir.setBorder(null);
@@ -106,7 +114,7 @@ public class frmCompra extends javax.swing.JFrame {
         btExcluir.setBounds(458, 600, 140, 90);
 
         btEditar.setBackground(new java.awt.Color(255, 137, 196));
-        btEditar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btEditar.setFont(new java.awt.Font("Agency FB", 0, 30)); // NOI18N
         btEditar.setForeground(new java.awt.Color(255, 255, 255));
         btEditar.setText("Editar");
         btEditar.setBorder(null);
@@ -147,6 +155,9 @@ public class frmCompra extends javax.swing.JFrame {
         
         CompraDao dao = new CompraDao();
         dao.salvarCompra(comp);
+        
+        
+         
     }//GEN-LAST:event_btSalvarrActionPerformed
 
     private void btEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEditarActionPerformed
@@ -176,6 +187,12 @@ public class frmCompra extends javax.swing.JFrame {
         dao.excluirCompra(comp);
         
     }//GEN-LAST:event_btExcluirActionPerformed
+
+    private void btNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNovoActionPerformed
+        // TODO add your handling code here:
+        
+        
+    }//GEN-LAST:event_btNovoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -215,10 +232,10 @@ public class frmCompra extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btEditar;
     private javax.swing.JButton btExcluir;
+    private javax.swing.JButton btNovo;
     private javax.swing.JButton btSalvarr;
     public javax.swing.JComboBox<String> cbFlavor;
     public javax.swing.JComboBox<String> cbShape;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
     public javax.swing.JTextField txtQuantityy;
     // End of variables declaration//GEN-END:variables

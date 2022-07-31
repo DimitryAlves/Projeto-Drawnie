@@ -51,11 +51,12 @@ public class frmBancoCompra extends javax.swing.JFrame {
 
         jScrollPane2 = new javax.swing.JScrollPane();
         tbCompras = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        btHome = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1406, 735));
+        setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
@@ -85,15 +86,20 @@ public class frmBancoCompra extends javax.swing.JFrame {
         jScrollPane2.setViewportView(tbCompras);
 
         getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(230, 70, 910, 402);
+        jScrollPane2.setBounds(210, 70, 960, 430);
 
-        jButton1.setBackground(new java.awt.Color(255, 137, 196));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Home");
-        jButton1.setBorder(null);
-        getContentPane().add(jButton1);
-        jButton1.setBounds(650, 600, 140, 80);
+        btHome.setBackground(new java.awt.Color(255, 137, 196));
+        btHome.setFont(new java.awt.Font("Agency FB", 0, 30)); // NOI18N
+        btHome.setForeground(new java.awt.Color(255, 255, 255));
+        btHome.setText("Home");
+        btHome.setBorder(null);
+        btHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btHomeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btHome);
+        btHome.setBounds(650, 600, 140, 90);
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\silva\\OneDrive\\Documentos\\NetBeansProjects\\ProjetoRaell\\src\\br\\com\\ProjetoRaell\\imagens\\banco.jpeg")); // NOI18N
         getContentPane().add(jLabel1);
@@ -118,6 +124,12 @@ public class frmBancoCompra extends javax.swing.JFrame {
                 
      
     }//GEN-LAST:event_tbComprasMouseClicked
+
+    private void btHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btHomeActionPerformed
+        // TODO add your handling code here:
+        frmHome home = new frmHome();
+        home.setVisible(true);
+    }//GEN-LAST:event_btHomeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,7 +167,7 @@ public class frmBancoCompra extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btHome;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tbCompras;

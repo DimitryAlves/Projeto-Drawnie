@@ -7,6 +7,7 @@ package br.com.ProjetoRaell.view;
 import br.com.ProjetoRaell.dao.ClienteDao;
 import br.com.ProjetoRaell.model.Cliente;
 
+
 /**
  *
  * @author silva
@@ -44,14 +45,17 @@ public class frmCliente extends javax.swing.JFrame {
         txtTelefone = new javax.swing.JFormattedTextField();
         btExcluir = new javax.swing.JButton();
         btEditar = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        pC = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1406, 735));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         txtId.setEditable(false);
         txtId.setBackground(new java.awt.Color(255, 137, 196));
+        txtId.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtId.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtId.setBorder(null);
         txtId.setSelectionColor(new java.awt.Color(153, 255, 0));
         txtId.addActionListener(new java.awt.event.ActionListener() {
@@ -63,26 +67,32 @@ public class frmCliente extends javax.swing.JFrame {
         txtId.setBounds(185, 200, 88, 80);
 
         txtNome.setBackground(new java.awt.Color(255, 137, 196));
+        txtNome.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txtNome.setBorder(null);
         getContentPane().add(txtNome);
         txtNome.setBounds(296, 200, 570, 80);
 
         txtCidade.setBackground(new java.awt.Color(255, 137, 196));
+        txtCidade.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txtCidade.setBorder(null);
         getContentPane().add(txtCidade);
         txtCidade.setBounds(533, 333, 330, 80);
 
         txtEstado.setBackground(new java.awt.Color(255, 137, 196));
+        txtEstado.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txtEstado.setBorder(null);
         getContentPane().add(txtEstado);
         txtEstado.setBounds(890, 333, 330, 80);
 
         txtRua.setBackground(new java.awt.Color(255, 137, 196));
+        txtRua.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txtRua.setBorder(null);
         getContentPane().add(txtRua);
         txtRua.setBounds(183, 470, 830, 80);
 
         txtQuan.setBackground(new java.awt.Color(255, 137, 196));
+        txtQuan.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtQuan.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtQuan.setBorder(null);
         txtQuan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,6 +109,7 @@ public class frmCliente extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        txtCep.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txtCep.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCepActionPerformed(evt);
@@ -108,7 +119,7 @@ public class frmCliente extends javax.swing.JFrame {
         txtCep.setBounds(183, 333, 330, 80);
 
         btSalvar.setBackground(new java.awt.Color(255, 137, 196));
-        btSalvar.setFont(new java.awt.Font("Segoe UI Emoji", 0, 24)); // NOI18N
+        btSalvar.setFont(new java.awt.Font("Agency FB", 0, 30)); // NOI18N
         btSalvar.setForeground(new java.awt.Color(255, 255, 255));
         btSalvar.setText("Save");
         btSalvar.setBorder(javax.swing.BorderFactory.createCompoundBorder());
@@ -127,11 +138,12 @@ public class frmCliente extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        txtTelefone.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         getContentPane().add(txtTelefone);
         txtTelefone.setBounds(890, 200, 333, 80);
 
         btExcluir.setBackground(new java.awt.Color(255, 137, 196));
-        btExcluir.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btExcluir.setFont(new java.awt.Font("Agency FB", 0, 30)); // NOI18N
         btExcluir.setForeground(new java.awt.Color(255, 255, 255));
         btExcluir.setText("Excluir");
         btExcluir.setBorder(null);
@@ -144,7 +156,7 @@ public class frmCliente extends javax.swing.JFrame {
         btExcluir.setBounds(477, 600, 140, 90);
 
         btEditar.setBackground(new java.awt.Color(255, 137, 196));
-        btEditar.setFont(new java.awt.Font("Segoe UI Emoji", 0, 24)); // NOI18N
+        btEditar.setFont(new java.awt.Font("Agency FB", 0, 30)); // NOI18N
         btEditar.setForeground(new java.awt.Color(255, 255, 255));
         btEditar.setText("Editar");
         btEditar.setBorder(javax.swing.BorderFactory.createCompoundBorder());
@@ -161,10 +173,10 @@ public class frmCliente extends javax.swing.JFrame {
         getContentPane().add(btEditar);
         btEditar.setBounds(635, 600, 140, 90);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\silva\\OneDrive\\Documentos\\NetBeansProjects\\ProjetoRaell\\src\\br\\com\\ProjetoRaell\\imagens\\cliente .jpeg")); // NOI18N
-        jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, -10, 1410, 730);
+        pC.setIcon(new javax.swing.ImageIcon("C:\\Users\\silva\\OneDrive\\Documentos\\NetBeansProjects\\ProjetoRaell\\src\\br\\com\\ProjetoRaell\\imagens\\cliente .jpeg")); // NOI18N
+        pC.setText("jLabel2");
+        getContentPane().add(pC);
+        pC.setBounds(0, -10, 1410, 730);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -195,6 +207,7 @@ public class frmCliente extends javax.swing.JFrame {
 
         ClienteDao dao = new ClienteDao();
         dao.salvarCliente(cli);
+        
 
     }//GEN-LAST:event_btSalvarActionPerformed
 
@@ -213,6 +226,9 @@ public class frmCliente extends javax.swing.JFrame {
 
         ClienteDao dao = new ClienteDao();
         dao.editarCliente(cli);
+        
+        
+         
     }//GEN-LAST:event_btEditarActionPerformed
 
     private void btEditarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btEditarMouseClicked
@@ -268,7 +284,7 @@ public class frmCliente extends javax.swing.JFrame {
     private javax.swing.JButton btEditar;
     private javax.swing.JButton btExcluir;
     private javax.swing.JButton btSalvar;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel pC;
     public javax.swing.JFormattedTextField txtCep;
     public javax.swing.JTextField txtCidade;
     public javax.swing.JTextField txtEstado;
