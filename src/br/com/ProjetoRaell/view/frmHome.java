@@ -95,30 +95,35 @@ public class frmHome extends javax.swing.JFrame {
         jLabel2.setBounds(-4, 0, 1480, 700);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btComprasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btComprasMouseClicked
         // TODO add your handling code here:
         frmCompra comp = new frmCompra();
         comp.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btComprasMouseClicked
 
     private void btBdComprasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btBdComprasMouseClicked
         // TODO add your handling code here:
          frmBancoCompra comp = new frmBancoCompra();
          comp.setVisible(true);
+         dispose();
     }//GEN-LAST:event_btBdComprasMouseClicked
 
     private void btClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btClientesMouseClicked
         // TODO add your handling code here:
          frmCliente cli = new frmCliente();
          cli.setVisible(true);
+         dispose();
     }//GEN-LAST:event_btClientesMouseClicked
 
     private void btBdClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btBdClientesMouseClicked
         // TODO add your handling code here:
         frmBancoCliente cli = new frmBancoCliente();
         cli.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btBdClientesMouseClicked
 
     /**

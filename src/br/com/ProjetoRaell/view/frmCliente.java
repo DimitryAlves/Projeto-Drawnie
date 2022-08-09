@@ -6,7 +6,7 @@ package br.com.ProjetoRaell.view;
 
 import br.com.ProjetoRaell.dao.ClienteDao;
 import br.com.ProjetoRaell.model.Cliente;
-
+ 
 
 /**
  *
@@ -46,6 +46,7 @@ public class frmCliente extends javax.swing.JFrame {
         btExcluir = new javax.swing.JButton();
         btEditar = new javax.swing.JButton();
         pC = new javax.swing.JLabel();
+        btHome = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1406, 735));
@@ -55,6 +56,7 @@ public class frmCliente extends javax.swing.JFrame {
         txtId.setEditable(false);
         txtId.setBackground(new java.awt.Color(255, 137, 196));
         txtId.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtId.setForeground(new java.awt.Color(255, 255, 255));
         txtId.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtId.setBorder(null);
         txtId.setSelectionColor(new java.awt.Color(153, 255, 0));
@@ -68,30 +70,35 @@ public class frmCliente extends javax.swing.JFrame {
 
         txtNome.setBackground(new java.awt.Color(255, 137, 196));
         txtNome.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtNome.setForeground(new java.awt.Color(255, 255, 255));
         txtNome.setBorder(null);
         getContentPane().add(txtNome);
         txtNome.setBounds(296, 200, 570, 80);
 
         txtCidade.setBackground(new java.awt.Color(255, 137, 196));
         txtCidade.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtCidade.setForeground(new java.awt.Color(255, 255, 255));
         txtCidade.setBorder(null);
         getContentPane().add(txtCidade);
         txtCidade.setBounds(533, 333, 330, 80);
 
         txtEstado.setBackground(new java.awt.Color(255, 137, 196));
         txtEstado.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtEstado.setForeground(new java.awt.Color(255, 255, 255));
         txtEstado.setBorder(null);
         getContentPane().add(txtEstado);
         txtEstado.setBounds(890, 333, 330, 80);
 
         txtRua.setBackground(new java.awt.Color(255, 137, 196));
         txtRua.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtRua.setForeground(new java.awt.Color(255, 255, 255));
         txtRua.setBorder(null);
         getContentPane().add(txtRua);
         txtRua.setBounds(183, 470, 830, 80);
 
         txtQuan.setBackground(new java.awt.Color(255, 137, 196));
         txtQuan.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtQuan.setForeground(new java.awt.Color(255, 255, 255));
         txtQuan.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtQuan.setBorder(null);
         txtQuan.addActionListener(new java.awt.event.ActionListener() {
@@ -104,6 +111,7 @@ public class frmCliente extends javax.swing.JFrame {
 
         txtCep.setBackground(new java.awt.Color(255, 137, 196));
         txtCep.setBorder(null);
+        txtCep.setForeground(new java.awt.Color(255, 255, 255));
         try {
             txtCep.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-###")));
         } catch (java.text.ParseException ex) {
@@ -133,6 +141,7 @@ public class frmCliente extends javax.swing.JFrame {
 
         txtTelefone.setBackground(new java.awt.Color(255, 137, 196));
         txtTelefone.setBorder(null);
+        txtTelefone.setForeground(new java.awt.Color(255, 255, 255));
         try {
             txtTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-#### ")));
         } catch (java.text.ParseException ex) {
@@ -145,7 +154,7 @@ public class frmCliente extends javax.swing.JFrame {
         btExcluir.setBackground(new java.awt.Color(255, 137, 196));
         btExcluir.setFont(new java.awt.Font("Agency FB", 0, 30)); // NOI18N
         btExcluir.setForeground(new java.awt.Color(255, 255, 255));
-        btExcluir.setText("Excluir");
+        btExcluir.setText("Delete");
         btExcluir.setBorder(null);
         btExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,7 +167,7 @@ public class frmCliente extends javax.swing.JFrame {
         btEditar.setBackground(new java.awt.Color(255, 137, 196));
         btEditar.setFont(new java.awt.Font("Agency FB", 0, 30)); // NOI18N
         btEditar.setForeground(new java.awt.Color(255, 255, 255));
-        btEditar.setText("Editar");
+        btEditar.setText("Edit");
         btEditar.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         btEditar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -173,12 +182,23 @@ public class frmCliente extends javax.swing.JFrame {
         getContentPane().add(btEditar);
         btEditar.setBounds(635, 600, 140, 90);
 
+        pC.setForeground(new java.awt.Color(255, 255, 255));
         pC.setIcon(new javax.swing.ImageIcon("C:\\Users\\silva\\OneDrive\\Documentos\\NetBeansProjects\\ProjetoRaell\\src\\br\\com\\ProjetoRaell\\imagens\\cliente .jpeg")); // NOI18N
         pC.setText("jLabel2");
         getContentPane().add(pC);
         pC.setBounds(0, -10, 1410, 730);
 
+        btHome.setText("jButton1");
+        btHome.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btHomeMouseClicked(evt);
+            }
+        });
+        getContentPane().add(btHome);
+        btHome.setBounds(475, 102, 430, 60);
+
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtQuanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtQuanActionPerformed
@@ -245,6 +265,14 @@ public class frmCliente extends javax.swing.JFrame {
         dao.excluirCliente(cli);
     }//GEN-LAST:event_btExcluirActionPerformed
 
+    private void btHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btHomeMouseClicked
+        // TODO add your handling code here:
+        var home = new frmHome();
+        home.setVisible(true);
+        dispose();
+        
+    }//GEN-LAST:event_btHomeMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -283,6 +311,7 @@ public class frmCliente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btEditar;
     private javax.swing.JButton btExcluir;
+    private javax.swing.JButton btHome;
     private javax.swing.JButton btSalvar;
     private javax.swing.JLabel pC;
     public javax.swing.JFormattedTextField txtCep;

@@ -106,6 +106,7 @@ public class frmBancoCompra extends javax.swing.JFrame {
         jLabel1.setBounds(0, -30, 1840, 760);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
@@ -129,6 +130,7 @@ public class frmBancoCompra extends javax.swing.JFrame {
         // TODO add your handling code here:
         frmHome home = new frmHome();
         home.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btHomeActionPerformed
 
     /**

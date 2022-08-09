@@ -3,7 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package br.com.ProjetoRaell.view;
- 
+
+import java.awt.Color;
+
+
+
 /**
  *
  * @author silva
@@ -27,30 +31,42 @@ public class frmLogin extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
-        jTextField2 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        spUser = new javax.swing.JTextField();
+        spPassword = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1406, 735));
+        setMinimumSize(new java.awt.Dimension(1398, 735));
         setResizable(false);
         getContentPane().setLayout(null);
 
-        jTextField2.setBackground(new java.awt.Color(255, 153, 204));
-        jTextField2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        spUser.setBackground(new java.awt.Color(255, 153, 204));
+        spUser.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        spUser.setForeground(new java.awt.Color(255, 255, 255));
+        spUser.setCaretColor(new java.awt.Color(255, 255, 255));
+        spUser.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        spUser.setDoubleBuffered(true);
+        spUser.setSelectedTextColor(new java.awt.Color(255, 255, 255));
+        spUser.setSelectionColor(new java.awt.Color(255, 255, 255));
+        spUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                spUserActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField2);
-        jTextField2.setBounds(335, 273, 780, 80);
+        getContentPane().add(spUser);
+        spUser.setBounds(335, 273, 780, 80);
 
-        jPasswordField1.setBackground(new java.awt.Color(255, 153, 204));
-        jPasswordField1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        getContentPane().add(jPasswordField1);
-        jPasswordField1.setBounds(335, 415, 780, 80);
+        spPassword.setBackground(new java.awt.Color(255, 153, 204));
+        spPassword.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        spPassword.setForeground(new java.awt.Color(255, 255, 255));
+        spPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                spPasswordActionPerformed(evt);
+            }
+        });
+        getContentPane().add(spPassword);
+        spPassword.setBounds(335, 415, 780, 80);
 
         jButton1.setBackground(new java.awt.Color(255, 153, 204));
         jButton1.setFont(new java.awt.Font("Agency FB", 0, 30)); // NOI18N
@@ -73,24 +89,33 @@ public class frmLogin extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\silva\\OneDrive\\Documentos\\NetBeansProjects\\ProjetoRaell\\src\\br\\com\\ProjetoRaell\\imagens\\login.jpeg")); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 1380, 708);
+        jLabel1.setBounds(0, 0, 1410, 708);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void spUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_spUserActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+        spUser.setForeground(Color.red);
+  
+       
+    }//GEN-LAST:event_spUserActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
         frmHome home = new frmHome();
         home.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void spPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_spPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_spPasswordActionPerformed
 
     /**
      * @param args the command line arguments
@@ -131,7 +156,7 @@ public class frmLogin extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JPasswordField spPassword;
+    private javax.swing.JTextField spUser;
     // End of variables declaration//GEN-END:variables
 }

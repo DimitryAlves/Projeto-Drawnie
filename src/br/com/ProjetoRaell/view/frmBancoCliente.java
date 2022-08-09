@@ -38,7 +38,7 @@ public class frmBancoCliente extends javax.swing.JFrame {
                 cliente.getEstado(),
                 cliente.getRua(),
                 cliente.getQuantity()
-                
+                                  
             });
         }
     }
@@ -112,6 +112,7 @@ public class frmBancoCliente extends javax.swing.JFrame {
         jLabel2.setBounds(0, 0, 1400, 700);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
@@ -124,12 +125,14 @@ public class frmBancoCliente extends javax.swing.JFrame {
         // TODO add your handling code here:
         frmHome home = new frmHome();
         home.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btHomeMouseClicked
 
     private void tbClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbClientesMouseClicked
         // TODO add your handling code here:
-        frmCliente cli = new frmCliente();
+        var cli = new frmCliente();
         cli.setVisible(true);
+        dispose();
         
         cli.txtId.setText(tbClientes.getValueAt(tbClientes.getSelectedRow(), 0).toString());
         cli.txtNome.setText(tbClientes.getValueAt(tbClientes.getSelectedRow(), 1).toString());
@@ -140,6 +143,7 @@ public class frmBancoCliente extends javax.swing.JFrame {
         cli.txtRua.setText(tbClientes.getValueAt(tbClientes.getSelectedRow(), 6).toString());
         cli.txtQuan.setText(tbClientes.getValueAt(tbClientes.getSelectedRow(), 7).toString());
                 
+        
     }//GEN-LAST:event_tbClientesMouseClicked
 
     /**

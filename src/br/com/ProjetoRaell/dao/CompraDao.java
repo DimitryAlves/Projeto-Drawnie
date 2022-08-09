@@ -32,7 +32,7 @@ public class CompraDao {
                stmt.execute();
                stmt.close();
                
-               JOptionPane.showMessageDialog(null, "Compra realizada com sucesso");
+               JOptionPane.showMessageDialog(null, "Compra realizada com sucesso!");
             
         } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Algo aconteceu" + e);
@@ -57,7 +57,7 @@ public class CompraDao {
                JOptionPane.showMessageDialog(null, "Compra alterada com sucesso!");
             
         } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "Algo aconteceu" + e);
+                 JOptionPane.showMessageDialog(null, "Algo aconteceu" + e);
 
         }
     }

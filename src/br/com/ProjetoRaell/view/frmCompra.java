@@ -37,6 +37,7 @@ public class frmCompra extends javax.swing.JFrame {
         btExcluir = new javax.swing.JButton();
         btEditar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        btHome = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1406, 735));
@@ -57,6 +58,7 @@ public class frmCompra extends javax.swing.JFrame {
 
         txtQuantityy.setBackground(new java.awt.Color(255, 137, 196));
         txtQuantityy.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtQuantityy.setForeground(new java.awt.Color(255, 255, 255));
         txtQuantityy.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtQuantityy.setBorder(null);
         getContentPane().add(txtQuantityy);
@@ -77,7 +79,7 @@ public class frmCompra extends javax.swing.JFrame {
 
         cbShape.setBackground(new java.awt.Color(255, 0, 153));
         cbShape.setForeground(new java.awt.Color(255, 255, 255));
-        cbShape.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbShape.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Formatos:", "Flower 1", "Flower 2", "Flower 3", "Flower 4", "Flower 5", "Flower 6", "Flower 7", "Flower 8", "Flower 9" }));
         cbShape.setBorder(null);
         cbShape.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,7 +91,7 @@ public class frmCompra extends javax.swing.JFrame {
 
         cbFlavor.setBackground(new java.awt.Color(255, 0, 153));
         cbFlavor.setForeground(new java.awt.Color(255, 255, 255));
-        cbFlavor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tradicional", "0% Lactose", "0% Glúten", "0% Açúcar", "Fitness", "Ninho", "Prestígio", "Oreo", "Recheio de Chocolate" }));
+        cbFlavor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sabores:", "Tradicional", "0% Lactose", "0% Glúten", "0% Açúcar", "Fitness", "Ninho", "Prestígio", "Oreo", "Recheio de Chocolate" }));
         cbFlavor.setBorder(null);
         cbFlavor.setVerifyInputWhenFocusTarget(false);
         cbFlavor.addActionListener(new java.awt.event.ActionListener() {
@@ -103,7 +105,7 @@ public class frmCompra extends javax.swing.JFrame {
         btExcluir.setBackground(new java.awt.Color(255, 137, 196));
         btExcluir.setFont(new java.awt.Font("Agency FB", 0, 30)); // NOI18N
         btExcluir.setForeground(new java.awt.Color(255, 255, 255));
-        btExcluir.setText("Excluir");
+        btExcluir.setText("Delete");
         btExcluir.setBorder(null);
         btExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,7 +118,7 @@ public class frmCompra extends javax.swing.JFrame {
         btEditar.setBackground(new java.awt.Color(255, 137, 196));
         btEditar.setFont(new java.awt.Font("Agency FB", 0, 30)); // NOI18N
         btEditar.setForeground(new java.awt.Color(255, 255, 255));
-        btEditar.setText("Editar");
+        btEditar.setText("Edit");
         btEditar.setBorder(null);
         btEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,7 +133,21 @@ public class frmCompra extends javax.swing.JFrame {
         getContentPane().add(jLabel2);
         jLabel2.setBounds(-13, -10, 1400, 720);
 
+        btHome.setBackground(new java.awt.Color(255, 137, 196));
+        btHome.setFont(new java.awt.Font("Agency FB", 0, 24)); // NOI18N
+        btHome.setForeground(new java.awt.Color(255, 255, 255));
+        btHome.setText("Home");
+        btHome.setBorder(null);
+        btHome.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btHomeMouseClicked(evt);
+            }
+        });
+        getContentPane().add(btHome);
+        btHome.setBounds(560, 90, 280, 70);
+
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void cbShapeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbShapeActionPerformed
@@ -190,9 +206,20 @@ public class frmCompra extends javax.swing.JFrame {
 
     private void btNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNovoActionPerformed
         // TODO add your handling code here:
+        cbFlavor.setSelectedItem("Sabores:");
+        cbShape.setSelectedItem("Formatos:");
+        txtQuantityy.setText("");
         
         
     }//GEN-LAST:event_btNovoActionPerformed
+
+    private void btHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btHomeMouseClicked
+        // TODO add your handling code here:
+        var home = new frmHome();
+        home.setVisible(true);
+        dispose();
+        
+    }//GEN-LAST:event_btHomeMouseClicked
 
     /**
      * @param args the command line arguments
@@ -232,6 +259,7 @@ public class frmCompra extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btEditar;
     private javax.swing.JButton btExcluir;
+    private javax.swing.JButton btHome;
     private javax.swing.JButton btNovo;
     private javax.swing.JButton btSalvarr;
     public javax.swing.JComboBox<String> cbFlavor;
