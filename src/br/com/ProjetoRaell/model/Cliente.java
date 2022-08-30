@@ -7,10 +7,9 @@ public class Cliente {
     private String nome;
     private String telefone;
     private String cep;
-    private String cidade;
-    private String estado;
+    private String cidade;;
     private String rua;
-    private int quantity;
+    private int numero;
 
     public int getId() {
         return id;
@@ -52,14 +51,6 @@ public class Cliente {
         this.cidade = cidade;
     }
 
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
-
     public String getRua() {
         return rua;
     }
@@ -68,12 +59,12 @@ public class Cliente {
         this.rua = rua;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public int getNumero() {
+        return numero;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setNumero(int numero) {
+        this.numero = numero;
     }
     
     

@@ -26,34 +26,52 @@ public class frmHome extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btCompras = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        btCompras1 = new javax.swing.JButton();
         btBdCompras = new javax.swing.JButton();
+        btCompras = new javax.swing.JButton();
         btClientes = new javax.swing.JButton();
         btBdClientes = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1406, 735));
         setResizable(false);
         getContentPane().setLayout(null);
 
-        btCompras.setBackground(new java.awt.Color(255, 137, 196));
-        btCompras.setFont(new java.awt.Font("Agency FB", 0, 36)); // NOI18N
-        btCompras.setForeground(new java.awt.Color(255, 255, 255));
-        btCompras.setText("Compras");
-        btCompras.setBorder(null);
-        btCompras.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabel1.setFont(new java.awt.Font("Agency FB", 1, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 102, 204));
+        jLabel1.setText("Draw a new future");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(230, 440, 390, 60);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ProjetoRaell/imagens/home.jpeg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(-4, 0, 1480, 700);
+
+        btCompras1.setBackground(new java.awt.Color(255, 137, 196));
+        btCompras1.setFont(new java.awt.Font("Agency FB", 0, 36)); // NOI18N
+        btCompras1.setForeground(new java.awt.Color(255, 255, 255));
+        btCompras1.setText("Purchases");
+        btCompras1.setBorder(null);
+        btCompras1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btComprasMouseClicked(evt);
+                btCompras1MouseClicked(evt);
             }
         });
-        getContentPane().add(btCompras);
-        btCompras.setBounds(229, 278, 440, 130);
+        btCompras1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCompras1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btCompras1);
+        btCompras1.setBounds(180, 430, 450, 80);
 
         btBdCompras.setBackground(new java.awt.Color(255, 137, 196));
         btBdCompras.setFont(new java.awt.Font("Agency FB", 0, 36)); // NOI18N
         btBdCompras.setForeground(new java.awt.Color(255, 255, 255));
-        btBdCompras.setText("BD Compras");
+        btBdCompras.setText("DB Purchases");
         btBdCompras.setBorder(null);
         btBdCompras.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -61,12 +79,25 @@ public class frmHome extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btBdCompras);
-        btBdCompras.setBounds(229, 465, 440, 130);
+        btBdCompras.setBounds(830, 520, 490, 110);
+
+        btCompras.setBackground(new java.awt.Color(255, 137, 196));
+        btCompras.setFont(new java.awt.Font("Agency FB", 0, 36)); // NOI18N
+        btCompras.setForeground(new java.awt.Color(255, 255, 255));
+        btCompras.setText("Purchases");
+        btCompras.setBorder(null);
+        btCompras.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btComprasMouseClicked(evt);
+            }
+        });
+        getContentPane().add(btCompras);
+        btCompras.setBounds(830, 370, 480, 110);
 
         btClientes.setBackground(new java.awt.Color(255, 137, 196));
         btClientes.setFont(new java.awt.Font("Agency FB", 0, 36)); // NOI18N
         btClientes.setForeground(new java.awt.Color(255, 255, 255));
-        btClientes.setText("Clientes");
+        btClientes.setText("Customers");
         btClientes.setBorder(null);
         btClientes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -74,12 +105,12 @@ public class frmHome extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btClientes);
-        btClientes.setBounds(725, 278, 440, 130);
+        btClientes.setBounds(830, 70, 490, 100);
 
         btBdClientes.setBackground(new java.awt.Color(255, 137, 196));
         btBdClientes.setFont(new java.awt.Font("Agency FB", 0, 36)); // NOI18N
         btBdClientes.setForeground(new java.awt.Color(255, 255, 255));
-        btBdClientes.setText("BD Clientes");
+        btBdClientes.setText("DB Customers");
         btBdClientes.setBorder(null);
         btBdClientes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -87,12 +118,7 @@ public class frmHome extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btBdClientes);
-        btBdClientes.setBounds(725, 465, 440, 130);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\silva\\OneDrive\\Documentos\\NetBeansProjects\\ProjetoRaell\\src\\br\\com\\ProjetoRaell\\imagens\\home.jpeg")); // NOI18N
-        jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(-4, 0, 1480, 700);
+        btBdClientes.setBounds(830, 220, 480, 110);
 
         pack();
         setLocationRelativeTo(null);
@@ -125,6 +151,17 @@ public class frmHome extends javax.swing.JFrame {
         cli.setVisible(true);
         dispose();
     }//GEN-LAST:event_btBdClientesMouseClicked
+
+    private void btCompras1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btCompras1MouseClicked
+        // TODO add your handling code here:
+        frmCompra comp = new frmCompra();
+         comp.setVisible(true);
+         dispose();
+    }//GEN-LAST:event_btCompras1MouseClicked
+
+    private void btCompras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCompras1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btCompras1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -166,6 +203,8 @@ public class frmHome extends javax.swing.JFrame {
     private javax.swing.JButton btBdCompras;
     private javax.swing.JButton btClientes;
     private javax.swing.JButton btCompras;
+    private javax.swing.JButton btCompras1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

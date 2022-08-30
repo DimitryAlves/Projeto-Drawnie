@@ -34,18 +34,17 @@ public class frmCliente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtId = new javax.swing.JTextField();
         txtNome = new javax.swing.JTextField();
+        txtId = new javax.swing.JTextField();
         txtCidade = new javax.swing.JTextField();
-        txtEstado = new javax.swing.JTextField();
         txtRua = new javax.swing.JTextField();
-        txtQuan = new javax.swing.JTextField();
+        txtNumero = new javax.swing.JTextField();
         txtCep = new javax.swing.JFormattedTextField();
-        btSalvar = new javax.swing.JButton();
         txtTelefone = new javax.swing.JFormattedTextField();
-        btExcluir = new javax.swing.JButton();
-        btEditar = new javax.swing.JButton();
         pC = new javax.swing.JLabel();
+        btSalvar = new javax.swing.JButton();
+        btEditar = new javax.swing.JButton();
+        btExcluir = new javax.swing.JButton();
         btHome = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -53,8 +52,20 @@ public class frmCliente extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
 
+        txtNome.setBackground(new java.awt.Color(242, 141, 196));
+        txtNome.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtNome.setForeground(new java.awt.Color(255, 255, 255));
+        txtNome.setBorder(null);
+        txtNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtNome);
+        txtNome.setBounds(300, 230, 910, 70);
+
         txtId.setEditable(false);
-        txtId.setBackground(new java.awt.Color(255, 137, 196));
+        txtId.setBackground(new java.awt.Color(242, 141, 196));
         txtId.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txtId.setForeground(new java.awt.Color(255, 255, 255));
         txtId.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -66,50 +77,36 @@ public class frmCliente extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtId);
-        txtId.setBounds(185, 200, 88, 80);
+        txtId.setBounds(190, 230, 80, 70);
 
-        txtNome.setBackground(new java.awt.Color(255, 137, 196));
-        txtNome.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        txtNome.setForeground(new java.awt.Color(255, 255, 255));
-        txtNome.setBorder(null);
-        getContentPane().add(txtNome);
-        txtNome.setBounds(296, 200, 570, 80);
-
-        txtCidade.setBackground(new java.awt.Color(255, 137, 196));
+        txtCidade.setBackground(new java.awt.Color(242, 141, 196));
         txtCidade.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txtCidade.setForeground(new java.awt.Color(255, 255, 255));
         txtCidade.setBorder(null);
         getContentPane().add(txtCidade);
-        txtCidade.setBounds(533, 333, 330, 80);
+        txtCidade.setBounds(516, 360, 340, 70);
 
-        txtEstado.setBackground(new java.awt.Color(255, 137, 196));
-        txtEstado.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        txtEstado.setForeground(new java.awt.Color(255, 255, 255));
-        txtEstado.setBorder(null);
-        getContentPane().add(txtEstado);
-        txtEstado.setBounds(890, 333, 330, 80);
-
-        txtRua.setBackground(new java.awt.Color(255, 137, 196));
+        txtRua.setBackground(new java.awt.Color(242, 141, 196));
         txtRua.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txtRua.setForeground(new java.awt.Color(255, 255, 255));
         txtRua.setBorder(null);
         getContentPane().add(txtRua);
-        txtRua.setBounds(183, 470, 830, 80);
+        txtRua.setBounds(190, 497, 810, 70);
 
-        txtQuan.setBackground(new java.awt.Color(255, 137, 196));
-        txtQuan.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        txtQuan.setForeground(new java.awt.Color(255, 255, 255));
-        txtQuan.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtQuan.setBorder(null);
-        txtQuan.addActionListener(new java.awt.event.ActionListener() {
+        txtNumero.setBackground(new java.awt.Color(242, 141, 196));
+        txtNumero.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtNumero.setForeground(new java.awt.Color(255, 255, 255));
+        txtNumero.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNumero.setBorder(null);
+        txtNumero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtQuanActionPerformed(evt);
+                txtNumeroActionPerformed(evt);
             }
         });
-        getContentPane().add(txtQuan);
-        txtQuan.setBounds(1031, 470, 190, 80);
+        getContentPane().add(txtNumero);
+        txtNumero.setBounds(1040, 495, 170, 70);
 
-        txtCep.setBackground(new java.awt.Color(255, 137, 196));
+        txtCep.setBackground(new java.awt.Color(242, 141, 196));
         txtCep.setBorder(null);
         txtCep.setForeground(new java.awt.Color(255, 255, 255));
         try {
@@ -124,7 +121,25 @@ public class frmCliente extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtCep);
-        txtCep.setBounds(183, 333, 330, 80);
+        txtCep.setBounds(190, 360, 290, 70);
+
+        txtTelefone.setBackground(new java.awt.Color(242, 141, 196));
+        txtTelefone.setBorder(null);
+        txtTelefone.setForeground(new java.awt.Color(255, 255, 255));
+        try {
+            txtTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-#### ")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        txtTelefone.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        getContentPane().add(txtTelefone);
+        txtTelefone.setBounds(890, 360, 333, 70);
+
+        pC.setForeground(new java.awt.Color(255, 255, 255));
+        pC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ProjetoRaell/imagens/customer.jpeg"))); // NOI18N
+        pC.setText("jLabel2");
+        getContentPane().add(pC);
+        pC.setBounds(0, -10, 1410, 730);
 
         btSalvar.setBackground(new java.awt.Color(255, 137, 196));
         btSalvar.setFont(new java.awt.Font("Agency FB", 0, 30)); // NOI18N
@@ -138,31 +153,6 @@ public class frmCliente extends javax.swing.JFrame {
         });
         getContentPane().add(btSalvar);
         btSalvar.setBounds(793, 600, 140, 90);
-
-        txtTelefone.setBackground(new java.awt.Color(255, 137, 196));
-        txtTelefone.setBorder(null);
-        txtTelefone.setForeground(new java.awt.Color(255, 255, 255));
-        try {
-            txtTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-#### ")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtTelefone.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        getContentPane().add(txtTelefone);
-        txtTelefone.setBounds(890, 200, 333, 80);
-
-        btExcluir.setBackground(new java.awt.Color(255, 137, 196));
-        btExcluir.setFont(new java.awt.Font("Agency FB", 0, 30)); // NOI18N
-        btExcluir.setForeground(new java.awt.Color(255, 255, 255));
-        btExcluir.setText("Delete");
-        btExcluir.setBorder(null);
-        btExcluir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btExcluirActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btExcluir);
-        btExcluir.setBounds(477, 600, 140, 90);
 
         btEditar.setBackground(new java.awt.Color(255, 137, 196));
         btEditar.setFont(new java.awt.Font("Agency FB", 0, 30)); // NOI18N
@@ -182,11 +172,18 @@ public class frmCliente extends javax.swing.JFrame {
         getContentPane().add(btEditar);
         btEditar.setBounds(635, 600, 140, 90);
 
-        pC.setForeground(new java.awt.Color(255, 255, 255));
-        pC.setIcon(new javax.swing.ImageIcon("C:\\Users\\silva\\OneDrive\\Documentos\\NetBeansProjects\\ProjetoRaell\\src\\br\\com\\ProjetoRaell\\imagens\\cliente .jpeg")); // NOI18N
-        pC.setText("jLabel2");
-        getContentPane().add(pC);
-        pC.setBounds(0, -10, 1410, 730);
+        btExcluir.setBackground(new java.awt.Color(255, 137, 196));
+        btExcluir.setFont(new java.awt.Font("Agency FB", 0, 30)); // NOI18N
+        btExcluir.setForeground(new java.awt.Color(255, 255, 255));
+        btExcluir.setText("Delete");
+        btExcluir.setBorder(null);
+        btExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btExcluirActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btExcluir);
+        btExcluir.setBounds(470, 600, 140, 90);
 
         btHome.setText("jButton1");
         btHome.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -201,9 +198,9 @@ public class frmCliente extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtQuanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtQuanActionPerformed
+    private void txtNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumeroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtQuanActionPerformed
+    }//GEN-LAST:event_txtNumeroActionPerformed
 
     private void txtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdActionPerformed
         // TODO add your handling code here:
@@ -221,9 +218,8 @@ public class frmCliente extends javax.swing.JFrame {
         cli.setTelefone(txtTelefone.getText());
         cli.setCep(txtCep.getText());
         cli.setCidade(txtCidade.getText());
-        cli.setEstado(txtEstado.getText());
         cli.setRua(txtRua.getText());
-        cli.setQuantity(Integer.parseInt(txtQuan.getText()));
+        cli.setNumero(Integer.parseInt(txtNumero.getText()));
 
         ClienteDao dao = new ClienteDao();
         dao.salvarCliente(cli);
@@ -239,9 +235,8 @@ public class frmCliente extends javax.swing.JFrame {
         cli.setTelefone(txtTelefone.getText());
         cli.setCep(txtCep.getText());
         cli.setCidade(txtCidade.getText());
-        cli.setEstado(txtEstado.getText());
         cli.setRua(txtRua.getText());
-        cli.setQuantity(Integer.parseInt(txtQuan.getText()));
+        cli.setNumero(Integer.parseInt(txtNumero.getText()));
         cli.setId(Integer.parseInt(txtId.getText()));
 
         ClienteDao dao = new ClienteDao();
@@ -272,6 +267,10 @@ public class frmCliente extends javax.swing.JFrame {
         dispose();
         
     }//GEN-LAST:event_btHomeMouseClicked
+
+    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -316,10 +315,9 @@ public class frmCliente extends javax.swing.JFrame {
     private javax.swing.JLabel pC;
     public javax.swing.JFormattedTextField txtCep;
     public javax.swing.JTextField txtCidade;
-    public javax.swing.JTextField txtEstado;
     public javax.swing.JTextField txtId;
     public javax.swing.JTextField txtNome;
-    public javax.swing.JTextField txtQuan;
+    public javax.swing.JTextField txtNumero;
     public javax.swing.JTextField txtRua;
     public javax.swing.JFormattedTextField txtTelefone;
     // End of variables declaration//GEN-END:variables

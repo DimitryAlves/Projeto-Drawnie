@@ -108,4 +108,30 @@ public class CompraDao {
         }
     
     }
+    public List<Compra> buscarCompra(String flavor) {
+        try {
+            List<Compra> compras = new ArrayList<>();
+            
+            String sql = "select * from cadastro_compra where flavor like ?";
+            PreparedStatement stmt = con.prepareStatement(sql);
+            stmt.setString(1, flavor);
+            ResultSet rs = stmt.executeQuery();
+            
+            while(rs.next()){              
+                Compra comp = new Compra();
+                
+                comp.setFlavor(rs.getString("flavor"));
+                comp.setShape(rs.getString("shape"));
+                comp.setQuantity(rs.getInt("quantity"));
+                
+                compras.add(comp);
+            }
+            
+            return compras;
+                    
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Erro ao executar consulta!" + e);
+            return null;
+}
+    }
 }

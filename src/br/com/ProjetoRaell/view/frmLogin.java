@@ -33,17 +33,18 @@ public class frmLogin extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         spUser = new javax.swing.JTextField();
         spPassword = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1398, 735));
+        setMinimumSize(new java.awt.Dimension(1289, 670));
         setResizable(false);
         getContentPane().setLayout(null);
 
-        spUser.setBackground(new java.awt.Color(255, 153, 204));
+        spUser.setBackground(new java.awt.Color(242, 141, 196));
         spUser.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         spUser.setForeground(new java.awt.Color(255, 255, 255));
+        spUser.setBorder(null);
         spUser.setCaretColor(new java.awt.Color(255, 255, 255));
         spUser.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         spUser.setDoubleBuffered(true);
@@ -55,20 +56,25 @@ public class frmLogin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(spUser);
-        spUser.setBounds(335, 273, 780, 80);
+        spUser.setBounds(127, 263, 520, 60);
 
-        spPassword.setBackground(new java.awt.Color(255, 153, 204));
+        spPassword.setBackground(new java.awt.Color(242, 141, 196));
         spPassword.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         spPassword.setForeground(new java.awt.Color(255, 255, 255));
+        spPassword.setBorder(null);
         spPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 spPasswordActionPerformed(evt);
             }
         });
         getContentPane().add(spPassword);
-        spPassword.setBounds(335, 415, 780, 80);
+        spPassword.setBounds(127, 390, 520, 60);
 
-        jButton1.setBackground(new java.awt.Color(255, 153, 204));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ProjetoRaell/imagens/loginn.jpeg"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(-10, -90, 1340, 830);
+
+        jButton1.setBackground(new java.awt.Color(255, 102, 255));
         jButton1.setFont(new java.awt.Font("Agency FB", 0, 30)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 0, 204));
         jButton1.setText("Go");
@@ -84,12 +90,7 @@ public class frmLogin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(584, 574, 280, 100);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\silva\\OneDrive\\Documentos\\NetBeansProjects\\ProjetoRaell\\src\\br\\com\\ProjetoRaell\\imagens\\login.jpeg")); // NOI18N
-        jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 1410, 708);
+        jButton1.setBounds(290, 510, 230, 70);
 
         pack();
         setLocationRelativeTo(null);

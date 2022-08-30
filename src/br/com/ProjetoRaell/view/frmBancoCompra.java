@@ -52,7 +52,9 @@ public class frmBancoCompra extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tbCompras = new javax.swing.JTable();
         btHome = new javax.swing.JButton();
+        txtPesquisar = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        btPesquisar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1406, 735));
@@ -77,6 +79,7 @@ public class frmBancoCompra extends javax.swing.JFrame {
                 "Flavor", "Shape", "Quantity"
             }
         ));
+        tbCompras.setMaximumSize(new java.awt.Dimension(2147483644, 80));
         tbCompras.setSelectionBackground(new java.awt.Color(255, 102, 204));
         tbCompras.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -86,7 +89,7 @@ public class frmBancoCompra extends javax.swing.JFrame {
         jScrollPane2.setViewportView(tbCompras);
 
         getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(210, 70, 960, 430);
+        jScrollPane2.setBounds(110, 220, 1180, 380);
 
         btHome.setBackground(new java.awt.Color(255, 137, 196));
         btHome.setFont(new java.awt.Font("Agency FB", 0, 30)); // NOI18N
@@ -101,9 +104,25 @@ public class frmBancoCompra extends javax.swing.JFrame {
         getContentPane().add(btHome);
         btHome.setBounds(650, 600, 140, 90);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\silva\\OneDrive\\Documentos\\NetBeansProjects\\ProjetoRaell\\src\\br\\com\\ProjetoRaell\\imagens\\banco.jpeg")); // NOI18N
+        txtPesquisar.setBackground(new java.awt.Color(242, 141, 196));
+        txtPesquisar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtPesquisar.setForeground(new java.awt.Color(255, 255, 255));
+        txtPesquisar.setBorder(null);
+        getContentPane().add(txtPesquisar);
+        txtPesquisar.setBounds(651, 82, 560, 50);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ProjetoRaell/imagens/purchasertable.jpeg"))); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, -30, 1840, 760);
+
+        btPesquisar.setText("jButton1");
+        btPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btPesquisarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btPesquisar);
+        btPesquisar.setBounds(1210, 92, 40, 30);
 
         pack();
         setLocationRelativeTo(null);
@@ -132,6 +151,27 @@ public class frmBancoCompra extends javax.swing.JFrame {
         home.setVisible(true);
         dispose();
     }//GEN-LAST:event_btHomeActionPerformed
+
+    private void btPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPesquisarActionPerformed
+        // TODO add your handling code here:
+         String flavor = "%" +  txtPesquisar.getText() + "%";
+         
+        CompraDao dao = new CompraDao();
+        List<Compra> compras = dao.buscarCompra(flavor);
+        DefaultTableModel dados = (DefaultTableModel)tbCompras.getModel();
+        dados.setNumRows(0);
+        
+        for (Compra compra : compras) {
+            dados.addRow(new Object[]{
+                compra.getFlavor(),
+                compra.getShape(),
+                compra.getQuantity()
+                
+                
+            });
+        }
+        
+    }//GEN-LAST:event_btPesquisarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,8 +210,10 @@ public class frmBancoCompra extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btHome;
+    private javax.swing.JButton btPesquisar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tbCompras;
+    private javax.swing.JTextField txtPesquisar;
     // End of variables declaration//GEN-END:variables
 }

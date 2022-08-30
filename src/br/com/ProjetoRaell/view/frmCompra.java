@@ -29,20 +29,60 @@ public class frmCompra extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btNovo = new javax.swing.JButton();
         txtQuantityy = new javax.swing.JTextField();
-        btSalvarr = new javax.swing.JButton();
         cbShape = new javax.swing.JComboBox<>();
         cbFlavor = new javax.swing.JComboBox<>();
-        btExcluir = new javax.swing.JButton();
-        btEditar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        btNovo = new javax.swing.JButton();
+        btSalvarr = new javax.swing.JButton();
+        btEditar = new javax.swing.JButton();
+        btExcluir = new javax.swing.JButton();
         btHome = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1406, 735));
+        setMinimumSize(new java.awt.Dimension(1400, 735));
         setResizable(false);
         getContentPane().setLayout(null);
+
+        txtQuantityy.setBackground(new java.awt.Color(255, 137, 196));
+        txtQuantityy.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtQuantityy.setForeground(new java.awt.Color(255, 255, 255));
+        txtQuantityy.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtQuantityy.setBorder(null);
+        getContentPane().add(txtQuantityy);
+        txtQuantityy.setBounds(1060, 267, 190, 80);
+
+        cbShape.setBackground(new java.awt.Color(255, 0, 153));
+        cbShape.setFont(new java.awt.Font("Agency FB", 0, 27)); // NOI18N
+        cbShape.setForeground(new java.awt.Color(255, 255, 255));
+        cbShape.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Formatos:", "Flower 1", "Flower 2", "Flower 3", "Flower 4", "Flower 5", "Flower 6", "Flower 7", "Flower 8", "Flower 9" }));
+        cbShape.setBorder(null);
+        cbShape.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbShapeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cbShape);
+        cbShape.setBounds(622, 267, 410, 80);
+
+        cbFlavor.setBackground(new java.awt.Color(255, 0, 153));
+        cbFlavor.setFont(new java.awt.Font("Agency FB", 0, 27)); // NOI18N
+        cbFlavor.setForeground(new java.awt.Color(255, 255, 255));
+        cbFlavor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sabores:", "Tradicional", "0% Lactose", "0% Glúten", "0% Açúcar", "Fitness", "Ninho", "Prestígio", "Oreo", "Recheio de Chocolate" }));
+        cbFlavor.setBorder(null);
+        cbFlavor.setVerifyInputWhenFocusTarget(false);
+        cbFlavor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbFlavorActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cbFlavor);
+        cbFlavor.setBounds(190, 267, 410, 80);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ProjetoRaell/imagens/purchase.jpeg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(-13, -10, 1400, 720);
 
         btNovo.setBackground(new java.awt.Color(255, 137, 196));
         btNovo.setForeground(new java.awt.Color(255, 255, 255));
@@ -54,15 +94,7 @@ public class frmCompra extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btNovo);
-        btNovo.setBounds(137, 290, 50, 50);
-
-        txtQuantityy.setBackground(new java.awt.Color(255, 137, 196));
-        txtQuantityy.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        txtQuantityy.setForeground(new java.awt.Color(255, 255, 255));
-        txtQuantityy.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtQuantityy.setBorder(null);
-        getContentPane().add(txtQuantityy);
-        txtQuantityy.setBounds(1047, 270, 190, 80);
+        btNovo.setBounds(130, 280, 50, 50);
 
         btSalvarr.setBackground(new java.awt.Color(255, 137, 196));
         btSalvarr.setFont(new java.awt.Font("Agency FB", 0, 30)); // NOI18N
@@ -77,44 +109,6 @@ public class frmCompra extends javax.swing.JFrame {
         getContentPane().add(btSalvarr);
         btSalvarr.setBounds(775, 600, 140, 90);
 
-        cbShape.setBackground(new java.awt.Color(255, 0, 153));
-        cbShape.setForeground(new java.awt.Color(255, 255, 255));
-        cbShape.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Formatos:", "Flower 1", "Flower 2", "Flower 3", "Flower 4", "Flower 5", "Flower 6", "Flower 7", "Flower 8", "Flower 9" }));
-        cbShape.setBorder(null);
-        cbShape.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbShapeActionPerformed(evt);
-            }
-        });
-        getContentPane().add(cbShape);
-        cbShape.setBounds(620, 270, 410, 80);
-
-        cbFlavor.setBackground(new java.awt.Color(255, 0, 153));
-        cbFlavor.setForeground(new java.awt.Color(255, 255, 255));
-        cbFlavor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sabores:", "Tradicional", "0% Lactose", "0% Glúten", "0% Açúcar", "Fitness", "Ninho", "Prestígio", "Oreo", "Recheio de Chocolate" }));
-        cbFlavor.setBorder(null);
-        cbFlavor.setVerifyInputWhenFocusTarget(false);
-        cbFlavor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbFlavorActionPerformed(evt);
-            }
-        });
-        getContentPane().add(cbFlavor);
-        cbFlavor.setBounds(198, 270, 410, 80);
-
-        btExcluir.setBackground(new java.awt.Color(255, 137, 196));
-        btExcluir.setFont(new java.awt.Font("Agency FB", 0, 30)); // NOI18N
-        btExcluir.setForeground(new java.awt.Color(255, 255, 255));
-        btExcluir.setText("Delete");
-        btExcluir.setBorder(null);
-        btExcluir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btExcluirActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btExcluir);
-        btExcluir.setBounds(458, 600, 140, 90);
-
         btEditar.setBackground(new java.awt.Color(255, 137, 196));
         btEditar.setFont(new java.awt.Font("Agency FB", 0, 30)); // NOI18N
         btEditar.setForeground(new java.awt.Color(255, 255, 255));
@@ -128,10 +122,18 @@ public class frmCompra extends javax.swing.JFrame {
         getContentPane().add(btEditar);
         btEditar.setBounds(617, 600, 140, 90);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\silva\\OneDrive\\Documentos\\NetBeansProjects\\ProjetoRaell\\src\\br\\com\\ProjetoRaell\\imagens\\compra .jpeg")); // NOI18N
-        jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(-13, -10, 1400, 720);
+        btExcluir.setBackground(new java.awt.Color(255, 137, 196));
+        btExcluir.setFont(new java.awt.Font("Agency FB", 0, 30)); // NOI18N
+        btExcluir.setForeground(new java.awt.Color(255, 255, 255));
+        btExcluir.setText("Delete");
+        btExcluir.setBorder(null);
+        btExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btExcluirActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btExcluir);
+        btExcluir.setBounds(458, 600, 140, 90);
 
         btHome.setBackground(new java.awt.Color(255, 137, 196));
         btHome.setFont(new java.awt.Font("Agency FB", 0, 24)); // NOI18N

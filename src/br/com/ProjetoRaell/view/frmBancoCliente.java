@@ -6,12 +6,17 @@ package br.com.ProjetoRaell.view;
 
 import br.com.ProjetoRaell.dao.ClienteDao;
 import br.com.ProjetoRaell.model.Cliente;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
- 
+
 /**
  *
- * @author silva 
+ * @author silva
  */
 public class frmBancoCliente extends javax.swing.JFrame {
 
@@ -21,13 +26,15 @@ public class frmBancoCliente extends javax.swing.JFrame {
     public frmBancoCliente() {
         initComponents();
     }
-    
-    public void listar(){
+
+ 
+
+    public void listar() {
         ClienteDao dao = new ClienteDao();
         List<Cliente> clientes = dao.listarClientes();
-        DefaultTableModel dados = (DefaultTableModel)tbClientes.getModel();
+        DefaultTableModel dados = (DefaultTableModel) tbClientes.getModel();
         dados.setNumRows(0);
-        
+
         for (Cliente cliente : clientes) {
             dados.addRow(new Object[]{
                 cliente.getId(),
@@ -35,14 +42,11 @@ public class frmBancoCliente extends javax.swing.JFrame {
                 cliente.getTelefone(),
                 cliente.getCep(),
                 cliente.getCidade(),
-                cliente.getEstado(),
                 cliente.getRua(),
-                cliente.getQuantity()
-                                  
+                cliente.getNumero()
             });
         }
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -53,10 +57,13 @@ public class frmBancoCliente extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tbClientes = new javax.swing.JTable();
         btHome = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tbClientes = new javax.swing.JTable();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        txtPesquisar = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        btPesquisar = new javax.swing.JButton();
 
         jLabel1.setText("jLabel1");
 
@@ -70,30 +77,7 @@ public class frmBancoCliente extends javax.swing.JFrame {
         });
         getContentPane().setLayout(null);
 
-        tbClientes.setBackground(new java.awt.Color(255, 137, 196));
-        tbClientes.setForeground(new java.awt.Color(255, 255, 255));
-        tbClientes.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Id", "Nome", "Telefone", "CEP", "Cidade", "Estado", "Rua/Avenida", "Quantity"
-            }
-        ));
-        tbClientes.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tbClientesMouseClicked(evt);
-            }
-        });
-        jScrollPane1.setViewportView(tbClientes);
-
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(210, 70, 960, 430);
-
-        btHome.setBackground(new java.awt.Color(255, 137, 196));
+        btHome.setBackground(new java.awt.Color(255, 123, 203));
         btHome.setFont(new java.awt.Font("Agency FB", 0, 30)); // NOI18N
         btHome.setForeground(new java.awt.Color(255, 255, 255));
         btHome.setText("Home");
@@ -106,10 +90,57 @@ public class frmBancoCliente extends javax.swing.JFrame {
         getContentPane().add(btHome);
         btHome.setBounds(650, 600, 140, 90);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\silva\\OneDrive\\Documentos\\NetBeansProjects\\ProjetoRaell\\src\\br\\com\\ProjetoRaell\\imagens\\banco.jpeg")); // NOI18N
+        tbClientes.setBackground(new java.awt.Color(255, 137, 196));
+        tbClientes.setForeground(new java.awt.Color(255, 255, 255));
+        tbClientes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Id", "Name", "Telephone", "Cep", "City", "Street", "Number"
+            }
+        ));
+        tbClientes.setSelectionBackground(new java.awt.Color(242, 141, 196));
+        tbClientes.setSelectionForeground(new java.awt.Color(242, 141, 196));
+        tbClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbClientesMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(tbClientes);
+
+        getContentPane().add(jScrollPane2);
+        jScrollPane2.setBounds(90, 190, 1220, 490);
+        getContentPane().add(jTabbedPane1);
+        jTabbedPane1.setBounds(960, 430, 0, 1);
+
+        txtPesquisar.setBackground(new java.awt.Color(242, 141, 196));
+        txtPesquisar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtPesquisar.setForeground(new java.awt.Color(255, 255, 255));
+        txtPesquisar.setBorder(null);
+        txtPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPesquisarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtPesquisar);
+        txtPesquisar.setBounds(650, 80, 560, 50);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\silva\\OneDrive\\Documentos\\NetBeansProjects\\ProjetoRaell\\src\\br\\com\\ProjetoRaell\\imagens\\customerstable.jpeg")); // NOI18N
         jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(0, 0, 1400, 700);
+
+        btPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ProjetoRaell/imagens/symbole-de-la-loupe-rose.png"))); // NOI18N
+        btPesquisar.setText("jButton1");
+        btPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btPesquisarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btPesquisar);
+        btPesquisar.setBounds(1210, 90, 50, 40);
 
         pack();
         setLocationRelativeTo(null);
@@ -118,7 +149,8 @@ public class frmBancoCliente extends javax.swing.JFrame {
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         // TODO add your handling code here:
         listar();
-        
+       
+
     }//GEN-LAST:event_formWindowActivated
 
     private void btHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btHomeMouseClicked
@@ -133,18 +165,45 @@ public class frmBancoCliente extends javax.swing.JFrame {
         var cli = new frmCliente();
         cli.setVisible(true);
         dispose();
-        
+ 
         cli.txtId.setText(tbClientes.getValueAt(tbClientes.getSelectedRow(), 0).toString());
         cli.txtNome.setText(tbClientes.getValueAt(tbClientes.getSelectedRow(), 1).toString());
         cli.txtTelefone.setText(tbClientes.getValueAt(tbClientes.getSelectedRow(), 2).toString());
         cli.txtCep.setText(tbClientes.getValueAt(tbClientes.getSelectedRow(), 3).toString());
         cli.txtCidade.setText(tbClientes.getValueAt(tbClientes.getSelectedRow(), 4).toString());
-        cli.txtEstado.setText(tbClientes.getValueAt(tbClientes.getSelectedRow(), 5).toString());
-        cli.txtRua.setText(tbClientes.getValueAt(tbClientes.getSelectedRow(), 6).toString());
-        cli.txtQuan.setText(tbClientes.getValueAt(tbClientes.getSelectedRow(), 7).toString());
-                
+        cli.txtRua.setText(tbClientes.getValueAt(tbClientes.getSelectedRow(), 5).toString());
+        cli.txtNumero.setText(tbClientes.getValueAt(tbClientes.getSelectedRow(), 6).toString());
         
+
     }//GEN-LAST:event_tbClientesMouseClicked
+
+    private void txtPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPesquisarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPesquisarActionPerformed
+
+    private void btPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPesquisarActionPerformed
+        // TODO add your handling code here:
+        String nome = "%" +  txtPesquisar.getText() + "%";
+        
+        ClienteDao dao = new ClienteDao();
+        List<Cliente> clientes = dao.buscarClientePorNome(nome);
+        
+        DefaultTableModel dados = (DefaultTableModel) tbClientes.getModel();
+        dados.setNumRows(0);
+
+        for (Cliente cliente : clientes) {
+            dados.addRow(new Object[]{
+                cliente.getId(),
+                cliente.getNome(),
+                cliente.getTelefone(),
+                cliente.getCep(),
+                cliente.getCidade(),
+                cliente.getRua(),
+                cliente.getNumero()
+            });
+        }
+    
+    }//GEN-LAST:event_btPesquisarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -183,9 +242,12 @@ public class frmBancoCliente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btHome;
+    private javax.swing.JButton btPesquisar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable tbClientes;
+    private javax.swing.JTextField txtPesquisar;
     // End of variables declaration//GEN-END:variables
 }
